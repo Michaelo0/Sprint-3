@@ -10,4 +10,5 @@ fun main() {
     val user3 = user1.copy()
     user3.city = "Tomsk"
     println(user1.equals(user3))
+    println(user2)
 }
