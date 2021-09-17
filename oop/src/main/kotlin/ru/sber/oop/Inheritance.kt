@@ -3,7 +3,7 @@ package ru.sber.oop
 open class Room(open val name: String, open val size: Int) {
 
     protected open val dangerLevel = 5
-    val goblin : Monster = Goblin("goblin power", 6, 3, "goblin", "just a goblin")
+    val goblin : Monster = Goblin("goblin power", 6,  "goblin", "just a goblin",3)
 
     fun description() = "Room: $name"
 
@@ -16,6 +16,6 @@ open class Room(open val name: String, open val size: Int) {
 //TODO: create class TownSquare here...
 class TownSquare(override val name: String = "Town Square", override val size: Int = 1000) : Room(name, size){
 
-    override val dangerLevel = 2
-    override fun load() = "TownSquare is loading"
+    override val dangerLevel = super.dangerLevel - 3
+    final override fun load() = "TownSquare is loading"
 }
