@@ -19,7 +19,7 @@ internal class CertificateRequestTest {
         mockkObject(Scanner)
         every { Scanner.getScanData() } returns arr
 
-        val cert = Certificate(certReq, employeeNumber, arr)
+        val cert = certReq.process(employeeNumber)
 
         println(cert.data)
         assertEquals(cert.data, arr)
